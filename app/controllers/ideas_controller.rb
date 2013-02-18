@@ -41,15 +41,22 @@ class IdeasController < ApplicationController
   # POST /ideas.json
   def create
     @idea = Idea.new(params[:idea])
-
-    respond_to do |format|
-      if @idea.save
-        format.html { redirect_to @idea, notice: 'Idea was successfully created.' }
-        format.json { render json: @idea, status: :created, location: @idea }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @idea.errors, status: :unprocessable_entity }
+    if params[:multi_line] == 0
+      respond_to do |format|
+        if @idea.save
+          format.html { redirect_to new_idea_path(author: @idea.author), notice: 'Idea was successfully created.' }
+          format.json { render json: @idea, status: :created, location: @idea }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @idea.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      @idea_collection = @idea.content.split(/\r?\n/)
+      @idea_collection.each do |idc|
+        Idea.create(author: @idea.author, content: idc, category: @idea.category)
+      end
+      redirect_to ideas_path
     end
   end
 
