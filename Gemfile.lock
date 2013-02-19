@@ -103,6 +103,7 @@ GEM
     rake (10.0.3)
     rdoc (3.12.1)
       json (~> 1.4)
+    rmagick (2.12.0)
     ruby-hmac (0.4.0)
     sass (3.2.5)
     sass-rails (3.2.6)
@@ -136,5 +137,6 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 3.2.12)
+  rmagick (= 2.12.0)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)

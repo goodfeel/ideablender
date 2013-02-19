@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 2.3.0.0'
 gem 'font-awesome-rails'
 gem 'carrierwave'
+gem "rmagick", "2.12.0", :require => 'RMagick'
 gem "fog", "~> 1.3.1"
 
 # To use ActiveModel has_secure_password
