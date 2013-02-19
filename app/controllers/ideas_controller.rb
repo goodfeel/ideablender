@@ -2,8 +2,11 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
-    @ideas = Idea.all.reverse
-
+    if params[:keyword]
+      @ideas = Idea.search(params[:keyword])
+    else
+      @ideas = Idea.all.reverse
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @ideas }

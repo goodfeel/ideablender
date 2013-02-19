@@ -4,4 +4,13 @@ class Idea < ActiveRecord::Base
   def self.random
     Idea.order("RANDOM()").first
   end
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['content LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+
 end

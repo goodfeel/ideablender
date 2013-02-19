@@ -22,8 +22,8 @@
           <%= icon_activable_link_to('li', 'lightbulb', 'New Idea', new_idea_path) %>
           <%= icon_activable_link_to('li', 'random', 'Random', idea_path(Idea.first, mode: 'random')) %>
         </ul>
-        <form class="navbar-search pull-right" action="">
-          <input type="text" class="search-query span2" placeholder="Idea?">
+        <form class="navbar-search pull-right" method="get" action="<%= ideas_url %>">
+          <input name="keyword" type="text" class="search-query span2" placeholder="Any idea?" value="<%= params[:keyword] if params[:keyword] %>">
         </form>
       </div><!-- /.nav-collapse -->
     </div>
