@@ -13,8 +13,11 @@ class IdeasController < ApplicationController
   # GET /ideas/1
   # GET /ideas/1.json
   def show
-    @idea = Idea.find(params[:id])
-
+    if params[:mode] == "random"
+      @idea = Idea.random
+    else
+      @idea = Idea.find(params[:id])
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @idea }

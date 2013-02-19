@@ -1,20 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Content:</b>
-  <%= @idea.content %>
-</p>
-
-<p>
-  <b>Author:</b>
-  <%= @idea.author %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @idea.category %>
-</p>
-
-
-<%= link_to 'Edit', edit_idea_path(@idea) %> |
-<%= link_to 'Back', ideas_path %>
+<br />
+<br />
+<div class="well">
+  <h3><%= params[:mode].camelize if params[:mode] %> Idea</h3>
+  <hr />
+  <%= render @idea %>
+  <br />
+  <br />
+</div>
+<br />
+<br />
