@@ -1,27 +1,17 @@
-<h1>Listing ideas</h1>
-
-<table>
-  <tr>
-    <th>Content</th>
-    <th>Author</th>
-    <th>Category</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @ideas.each do |idea| %>
-  <tr>
-    <td><%= idea.content %></td>
-    <td><%= idea.author %></td>
-    <td><%= idea.category %></td>
-    <td><%= link_to 'Show', idea %></td>
-    <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
-    <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class="span12">
+  <div class="well">
+    <div class="add-idea-button">
+      <%= link_to " New idea", new_idea_path, class: 'icon-lightbulb btn btn-success pull-right' %>
+    </div>
+    <div class="container">
+      <h3>Blend Ideas</h3>
+    </div>
+    <hr />
+    <div class="container">
+      <div class="span10">
+        <%= render @ideas %>
+      </div>
+    </div>
+  </div>
 
 <br />
-
-<%= link_to 'New Idea', new_idea_path %>

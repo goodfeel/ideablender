@@ -18,7 +18,7 @@ development:
   database: IdeaBlender_development
   pool: 5
   host: localhost
-  username: t0ny
+  username: ton
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -45,7 +45,7 @@ test:
   database: IdeaBlender_test
   pool: 5
   host: localhost
-  username: t0ny
+  username: ton
   password:
 
 production:
@@ -54,5 +54,5 @@ production:
   database: IdeaBlender_production
   pool: 5
   host: localhost
-  username: t0ny
+  username: ton
   password:
