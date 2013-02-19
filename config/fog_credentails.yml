@@ -1,0 +1,4 @@
+default:
+  aws_access_key_id: 'AKIAIMG7YWPDIV2LRFUA'
+  aws_secret_access_key: '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
+  region: 'us-east-1'
