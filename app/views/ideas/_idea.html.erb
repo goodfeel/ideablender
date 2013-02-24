@@ -3,6 +3,7 @@
   <div class="span9">
     <p><span class="label <%=label_color idea.category %>"><%= idea.category %></span> <%= idea.content %></p>
     <small><i class="icon-comment-alt"></i> <%= idea.author %><cite title="datetime"> at <%= time_ago_with_tense idea.created_at %>.</cite></small>
+    <hr />
   </div>
   <div class="edit-delete-icons">
     <%= link_to "", edit_idea_path(idea), class: "icon-pencil" %>
@@ -10,4 +11,3 @@
   </div>
 </blockquote>
 </div>
-<hr />
