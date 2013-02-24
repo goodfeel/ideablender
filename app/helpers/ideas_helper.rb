@@ -10,5 +10,6 @@ module IdeasHelper
       "label-important"
     else
       "label-info"
+    end
   end
 end
