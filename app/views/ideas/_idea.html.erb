@@ -1,7 +1,9 @@
 <div class="span10 clearfix">
 <blockquote>
-  <p><span class="label label-info"><%= idea.category %></span> <%= idea.content %></p>
-  <small><i class="icon-comment-alt"></i> <%= idea.author %><cite title="datetime"> at <%= time_ago_with_tense idea.created_at %>.</cite></small>
+  <div class="span9">
+    <p><span class="label <%=label_color idea.category %>"><%= idea.category %></span> <%= idea.content %></p>
+    <small><i class="icon-comment-alt"></i> <%= idea.author %><cite title="datetime"> at <%= time_ago_with_tense idea.created_at %>.</cite></small>
+  </div>
   <div class="edit-delete-icons">
     <%= link_to "", edit_idea_path(idea), class: "icon-pencil" %>
     <%= link_to "", idea, method: :delete, data: { confirm: 'Are you sure?' }, class: 'icon-trash' %>
